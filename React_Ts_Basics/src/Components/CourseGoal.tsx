@@ -1,9 +1,14 @@
 import { Card } from "./index";
 
-const CourseGoal = () => {
+interface CourseGoalProps {
+  title: string;
+  description: string;
+}
+
+const CourseGoal = ({ title, description }: CourseGoalProps) => {
   return (
     <div>
-      <Card />
+      <Card title={title} description={description} />
     </div>
   );
 };

@@ -4,7 +4,7 @@ interface ButtonProps {
   children: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ children }) => {
+const Button = ({ children }: ButtonProps) => {
   return <button>{children}</button>;
 };
 

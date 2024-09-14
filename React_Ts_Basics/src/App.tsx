@@ -2,10 +2,9 @@ import { CourseGoal } from "./Components";
 
 function App() {
   return (
-    <>
-      <h1>App</h1>
-      <CourseGoal />
-    </>
+    <main>
+      <CourseGoal title="React + Ts" description="React & TS from the ground" />
+    </main>
   );
 }
 

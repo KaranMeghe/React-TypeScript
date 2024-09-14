@@ -2,19 +2,16 @@
 import { Button } from "../../Components/index";
 
 interface CardProps {
-  title: string;
-  description: string;
+  goal: { title: string; description: string; id: number };
 }
 
-const Card = ({ title, description }: CardProps) => {
+const Card = ({ goal }: CardProps) => {
   return (
-    <article>
-      <div>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <Button>❌</Button>
-      </div>
-    </article>
+    <div>
+      <h2>{goal.title}</h2>
+      <p>{goal.description}</p>
+      <Button>❌</Button>
+    </div>
   );
 };
 

@@ -1,9 +1,25 @@
-import { CourseGoal } from "./Components";
+import { useState } from "react";
+import { CourseGoal, Header } from "./Components/index";
+import goalsImg from "../public/goals.jpg";
+
+interface Goals {
+  id: number;
+  title: string;
+  description: string;
+}
 
 function App() {
+  const [goals, setGoals] = useState<Goals[]>([]);
   return (
     <main>
-      <CourseGoal title="React + Ts" description="React & TS from the ground" />
+      <Header
+        image={{ src: goalsImg, alt: "A List Of Goals" }}
+        goals={goals}
+        setGoals={setGoals}
+      >
+        <h1>Set Yours Goals !</h1>
+      </Header>
+      <CourseGoal goals={goals} />
     </main>
   );
 }

@@ -1,15 +1,27 @@
 import { Card } from "./index";
 
-interface CourseGoalProps {
+interface Goals {
   title: string;
   description: string;
+  id: number;
+}
+interface CourseGoalProps {
+  goals: Goals[];
 }
 
-const CourseGoal = ({ title, description }: CourseGoalProps) => {
+const CourseGoal = ({ goals }: CourseGoalProps) => {
   return (
-    <div>
-      <Card title={title} description={description} />
-    </div>
+    <article>
+      <ul>
+        {goals.map((goal) => {
+          return (
+            <li key={goal.id}>
+              <Card goal={goal} />
+            </li>
+          );
+        })}
+      </ul>
+    </article>
   );
 };
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CourseGoal, Header } from "./Components/index";
 import goalsImg from "../public/goals.jpg";
 
-interface Goals {
+export interface Goals {
   id: number;
   title: string;
   description: string;
@@ -19,7 +19,7 @@ function App() {
       >
         <h1>Set Yours Goals !</h1>
       </Header>
-      <CourseGoal goals={goals} />
+      <CourseGoal goals={goals} setGoals={setGoals} />
     </main>
   );
 }

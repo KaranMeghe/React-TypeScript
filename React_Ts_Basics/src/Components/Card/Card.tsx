@@ -3,14 +3,15 @@ import { Button } from "../../Components/index";
 
 interface CardProps {
   goal: { title: string; description: string; id: number };
+  handleDelete: (id: number) => void;
 }
 
-const Card = ({ goal }: CardProps) => {
+const Card = ({ goal, handleDelete }: CardProps) => {
   return (
     <div>
       <h2>{goal.title}</h2>
       <p>{goal.description}</p>
-      <Button>❌</Button>
+      <Button onClick={() => handleDelete(goal.id)}>Delete</Button>
     </div>
   );
 };

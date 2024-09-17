@@ -26,7 +26,7 @@ const Header = ({ image, children, goals, setGoals }: HeaderProps) => {
       },
     ];
 
-    setGoals(updatedGoals);
+    input && summary && setGoals(updatedGoals);
   };
 
   return (

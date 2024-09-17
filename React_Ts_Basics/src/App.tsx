@@ -19,6 +19,7 @@ function App() {
       >
         <h1>Set Yours Goals !</h1>
       </Header>
+
       <CourseGoal goals={goals} setGoals={setGoals} />
     </main>
   );

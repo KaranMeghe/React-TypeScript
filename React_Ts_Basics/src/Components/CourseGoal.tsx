@@ -16,16 +16,19 @@ const CourseGoal = ({ goals, setGoals }: CourseGoalProps) => {
     );
   };
 
+  console.log(goals);
+
   return (
     <article>
       <ul>
-        {goals.map((goal) => {
-          return (
-            <li key={goal.id}>
-              <Card goal={goal} handleDelete={handleDelete} />
-            </li>
-          );
-        })}
+        {goals &&
+          goals.map((goal) => {
+            return (
+              <li key={goal.id}>
+                <Card goal={goal} handleDelete={handleDelete} />
+              </li>
+            );
+          })}
       </ul>
     </article>
   );

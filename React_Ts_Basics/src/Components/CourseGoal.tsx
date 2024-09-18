@@ -1,4 +1,5 @@
-import { Card } from "./index";
+import { ReactNode } from "react";
+import { Card, InfoBox } from "./index";
 import { Goals } from "../App";
 
 interface CourseGoalProps {
@@ -16,10 +17,27 @@ const CourseGoal = ({ goals, setGoals }: CourseGoalProps) => {
     );
   };
 
-  console.log(goals);
+  if (goals.length === 0) {
+    return (
+      <InfoBox mode="hint" className="infobox">
+        You have no goals yet. Start Adding some!
+      </InfoBox>
+    );
+  }
+
+  let warningBox: ReactNode;
+
+  if (goals.length >= 4) {
+    warningBox = (
+      <InfoBox mode="warning" className="infobox-warning">
+        You have too many courses in basket.
+      </InfoBox>
+    );
+  }
 
   return (
-    <article>
+    <article className="box">
+      {warningBox}
       <ul>
         {goals &&
           goals.map((goal) => {

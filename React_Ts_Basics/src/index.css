@@ -143,8 +143,21 @@ li button:hover {
 }
 
 .infobox-warning {
-  color: #ff6969;
-  border: 1px solid #ff6969;
   text-align: center;
   margin: 25px;
+}
+
+.warning--low {
+  color: #ff7400;
+  border: 1px solid #ff7400;
+}
+
+.warning--mid {
+  color: #ff4d00;
+  border: 1px solid #ff4d00;
+}
+
+.warning--high {
+  color: #ff0000;
+  border: 1px solid #ff0000;
 }

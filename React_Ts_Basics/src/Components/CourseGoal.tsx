@@ -27,9 +27,21 @@ const CourseGoal = ({ goals, setGoals }: CourseGoalProps) => {
 
   let warningBox: ReactNode;
 
+  let severity: string;
+
+  if (goals.length >= 4 && goals.length < 6) {
+    severity = "low";
+  } else if (goals.length >= 6 && goals.length < 8) {
+    severity = "mid";
+  } else if (goals.length >= 8) {
+    severity = "high";
+  } else {
+    severity = "low"; // Set a default if none of the above conditions match
+  }
+
   if (goals.length >= 4) {
     warningBox = (
-      <InfoBox mode="warning" className="infobox-warning">
+      <InfoBox mode="warning" className="infobox-warning" severity={severity}>
         You have too many courses in basket.
       </InfoBox>
     );
